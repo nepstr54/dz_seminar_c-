@@ -77,4 +77,27 @@ Double distance = Math.Sqrt(Math.Pow(x2 - x1, 2) + Math.Pow(y2 - y1, 2) + Math.P
 Console.WriteLine(Math.Round(distance, 2, MidpointRounding.ToZero));
 
 
+//Задача 23
+//Напишите программу, которая принимает на вход 2 числа (N, M) и выдаёт таблицу
+//кубов чисел от N до M.
+//2,3 -> 8, 27
+//1,5 -> 1, 8, 27, 64, 125
+
+
+
+Console.Write("Введите число 1: ");
+int a = Convert.ToInt32(Console.ReadLine());
+
+Console.Write("Введите число 2: ");
+int b = Convert.ToInt32(Console.ReadLine());
+
+while (a <= b)
+{
+    Console.WriteLine(Math.Pow(a, 3) + " ");
+    a++;
+
+
+}
+
+
 
