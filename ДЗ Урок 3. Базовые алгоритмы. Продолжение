@@ -4,21 +4,15 @@
 //23432 -> да
 
 
-class Program
-{
+Console.Clear();
+Console.WriteLine("Напишите программу, которая принимает на вход пятизначное число и проверяет, является ли оно палиндромом.");
+Console.WriteLine("Введите число:");
+    int number = Convert.ToInt32(Console.ReadLine());
+    int numberTemp = number;
+    int value;
+    int numberRevers = 0;
 
-    public static bool IsPalindromicNumber(int number)
-
-    {
-
-        int numberTemp = number;
-
-        int value;
-
-        int numberRevers = 0;
-
-
-        while (numberTemp > 0)
+while (numberTemp > 0)
         {
             value = numberTemp % 10;
             numberRevers = numberRevers * 10 + value;
@@ -27,20 +21,13 @@ class Program
 
         if (numberRevers == number)
         {
-            return true;
+            Console.Write("да"); ;
+            
         }
         else
         {
-            return false;
+            Console.Write("нет");;
         }
-    }
-
-    static void Main(string[] args)
-    {
-        int a = int.Parse(Console.ReadLine());
-        Console.WriteLine(IsPalindromicNumber(a));
-    }
-}
 
 
 
