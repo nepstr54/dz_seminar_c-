@@ -109,7 +109,6 @@ int Method(int a)
 //30 -> 8
 
 
-
 Console.Clear();
 Console.WriteLine("Напишите программу, которая на вход принимает " +
     "радиус круга и находит его площадь округленную до целого числа, " +
@@ -117,9 +116,17 @@ Console.WriteLine("Напишите программу, которая на вх
     "круга.");
 Console.Write("Введите радиус круга");
 int r = Convert.ToInt32(Console.ReadLine());
-int sq = (int)(Math.PI * Math.Pow(r, 2));
+double sq = (Math.PI * Math.Pow(r, 2));
+int r2 = (int)Math.Round(sq);
 
+int max = 0;
 
-Console.WriteLine(sq);
+while (sq > 0)
+{
+    if (max < sq % 10) max = (int)(sq % 10);
+    sq /= 10;
+}
+Console.WriteLine(max);
+
 
 
