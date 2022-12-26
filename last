@@ -1,3 +1,25 @@
+Console.WriteLine("Задача 64: Задайте значения M и N. Напишите программу, которая " +
+    "выведет все чётные натуральные числа в промежутке от M до N с помощью рекурсии.");
+Console.WriteLine("Введите M:");
+int M = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Введите N:");
+int N = Convert.ToInt32(Console.ReadLine());
+
+void AllEvenNumers(int M, int N)
+{
+    if (M > N) return;
+    if (M % 2 == 1) M += 1;
+
+    Console.Write($"{M}, ");
+    AllEvenNumers(M + 2, N);
+}
+
+AllEvenNumers(M,N);
+Console.WriteLine();
+
+
+
+//////////////////////////////////////
 Console.WriteLine("Задача 66: Задайте значения M и N. Напишите программу, " +
     "которая найдёт сумму натуральных элементов в промежутке от M до N с помощью рекурсии.");
 int m = InputInt("Введите M:");
