@@ -40,3 +40,39 @@ int CountNaturalSum(int m, int n)
 }
 
 
+//////////////////////
+Console.Clear();
+Console.WriteLine("Задача 68: Задайте значения M и N. Напишите программу, " +
+    "которая найдёт наибольший общий делитель (НОД) этих чисел с помощью рекурсии.\nM = 28; N = 7 -> 7");
+
+int a = 0;
+a = AskForInput("меньшее");
+int b = AskForInput("большее");
+int nod = a;
+
+System.Console.WriteLine($"\nНаибольший общий делитель (НОД) для натуральных чисел {a} и {b} - {PrintNOD(a, b, nod)}");
+
+int AskForInput(string str)
+{
+    while (true)
+    {
+        Console.Write($"\nНапишите {str} натуральное число:");
+        if (int.TryParse(Console.ReadLine(), out int number))
+        {
+            if (number > 0 && number > a)
+            {
+                return number;
+                break;
+            }
+            else Console.WriteLine($"Некорректно указано {str} натуральное число!\n");
+        }
+        else Console.WriteLine($"Некорректно указано {str} натуральное число!\n");
+    }
+}
+
+int PrintNOD(int first, int second, int nod)
+{
+    return second % nod == 0 && first % nod == 0 ? nod : PrintNOD(first, second, nod - 1);
+}
+
+
